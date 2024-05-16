@@ -56,7 +56,7 @@
                 <li class="w3-padding-16"><b>50</b> Domains</li>
                 <li class="w3-padding-16"><b>Endless</b> Support</li>
                 <li class="w3-padding-16">
-                    <h2 class="w3-wide">$ 50</h2>
+                    <h2 id="price-premium" class="w3-wide">$ 50</h2>
                     <span class="w3-opacity">per month</span>
                 </li>
                 <li class="w3-light-grey w3-padding-24">
@@ -71,7 +71,7 @@
         // Resultado esperado: vídeo con audio https://oscarm.tinytake.com/msc/ODg2NTA5NV8yMjMxMjI2OQ
 
         // 1. Muestra por consola el precio del plan "PREMIUM". Deberíamos observar '$ 50'
-
+        console.log(document.querySelector("#price-premium").textContent);
         // 2. Modifica por JavaScript el nombre del plan "Pro". Cambialo por el texto que aparece en el objeto "plans" para el plan "pro"
         const plans = {
             basic: "Basic",
@@ -80,11 +80,11 @@
         }
 
         // 3. Está página tiene una triquiñuela. Tras pasados 10 segundos, actualiza el precio del plan Pro a $ 20 para convencer al usuario y que tome el plan. Modifica la línea más abajo que pone `Cambiame!` con el valor adecuado para la propiedad .innerHTML para obtener el resultado esperado. No te precoupes por la función setTimeout, tan solo modifica la línea indicada.
-        setTimeout(function () {
-
-            document.querySelector('#price-pro').innerHTML = `Cambiame!`;
-
-        }, 10000);
+        function cambiarPrecio() {
+            document.querySelector('#price-pro').innerHTML = `<span style= "text-decoration: line-throught;">$25</span> $20`;
+        };
+        
+        setTimeout(cambiarPrecio, 3000);
 
 
 
